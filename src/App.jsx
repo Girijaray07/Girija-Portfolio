@@ -7,6 +7,8 @@ import ShinyText from './hooks/ShinyText';
 import ScrollReveal from './hooks/ScrollReveal';
 import RotatingText from './hooks/RotatingText';
 import Particles from './hooks/Particles';
+import { Analytics } from '@vercel/analytics/react';
+
 import profileImg from './assets/profile.png';
 
 import './App.css';
@@ -51,6 +53,7 @@ function App() {
 
   return (
     <div className="portfolio" ref={scrollContainerRef}>
+      <Analytics />
       <CircleCursor
         size={24}
         borderWidth={2}
