@@ -723,6 +723,11 @@
     gap: 36px;
   }
 
+  .hero-name {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    white-space: normal;
+  }
+
   .hero-title-line {
     justify-content: flex-start;
   }
@@ -769,8 +774,9 @@
   }
 
   .hero-name {
-    font-size: clamp(2.4rem, 10vw, 3.6rem);
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
     letter-spacing: -1px;
+    white-space: normal;
   }
 
   .skills-grid {

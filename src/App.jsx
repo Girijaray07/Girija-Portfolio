@@ -26,10 +26,10 @@ function App() {
       <SpeedInsights />
       <CircleCursor
         size={24}
-        borderWidth={2}
-        color="rgba(26, 26, 26, 0.8)"
-        trailColor="rgba(26, 26, 26, 0.2)"
-        delay={0.1}
+        borderWidth={5}
+        color="rgba(255, 0, 0, 0.8)"
+        trailColor="rgba(255, 0, 0, 0.2)"
+        delay={0.12}
       />
 
       <div className="portfolio-content">
