@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+
 import Galaxy from './hooks/Galaxy';
 import CircleCursor from './hooks/CircleCursor';
 import HeaderElement from './components/HeaderElement';
@@ -7,7 +8,9 @@ import ShinyText from './hooks/ShinyText';
 import ScrollReveal from './hooks/ScrollReveal';
 import RotatingText from './hooks/RotatingText';
 import Particles from './hooks/Particles';
+
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import profileImg from './assets/profile.png';
 
@@ -54,6 +57,7 @@ function App() {
   return (
     <div className="portfolio" ref={scrollContainerRef}>
       <Analytics />
+      <SpeedInsights />
       <CircleCursor
         size={24}
         borderWidth={2}
