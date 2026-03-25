@@ -5,6 +5,8 @@ import './HeaderElement.css'
 
 function HeaderElement() {
     const [activeTab, setActiveTab] = useState('home');
+    const [isDark, setIsDark] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
@@ -27,13 +29,16 @@ function HeaderElement() {
     }, []);
 
     const toggleTheme = () => {
+        const isCurrentlyDark = document.documentElement.classList.contains('dark-theme');
+
+        // update state properly
+        setIsDark(!isCurrentlyDark);
+
         if (!document.startViewTransition) {
             document.documentElement.classList.toggle('dark-theme');
             return;
         }
 
-        const isDark = document.documentElement.classList.contains('dark-theme');
-        
         const transition = document.startViewTransition(() => {
             document.documentElement.classList.toggle('dark-theme');
         });
@@ -41,6 +46,7 @@ function HeaderElement() {
         transition.ready.then(() => {
             const x = window.innerWidth;
             const y = 0;
+
             const endRadius = Math.hypot(x, window.innerHeight);
 
             const clipPath = [
@@ -48,14 +54,15 @@ function HeaderElement() {
                 `circle(${endRadius}px at ${x}px ${y}px)`
             ];
 
+            // ALWAYS animate the NEW layer expanding smoothly from the button
             document.documentElement.animate(
                 {
-                    clipPath: isDark ? [...clipPath].reverse() : clipPath,
+                    clipPath: clipPath
                 },
                 {
-                    duration: 600,
+                    duration: 700,
                     easing: "ease-in-out",
-                    pseudoElement: isDark ? "::view-transition-old(root)" : "::view-transition-new(root)",
+                    pseudoElement: "::view-transition-new(root)",
                 }
             );
         });
@@ -72,20 +79,20 @@ function HeaderElement() {
                 />
             </div>
             <nav className="header_items">
-                <ul>
-                    <li>
+                <ul className={isMenuOpen ? "mobile-open" : ""}>
+                    <li onClick={() => setIsMenuOpen(false)}>
                         <a href="#home" className={`header_item-text ${activeTab === 'home' ? 'active' : ''}`}>Home</a>
                     </li>
-                    <li>
+                    <li onClick={() => setIsMenuOpen(false)}>
                         <a href="#about" className={`header_item-text ${activeTab === 'about' ? 'active' : ''}`}>About Me</a>
                     </li>
-                    <li>
+                    <li onClick={() => setIsMenuOpen(false)}>
                         <a href="#skills" className={`header_item-text ${activeTab === 'skills' ? 'active' : ''}`}>Skills</a>
                     </li>
-                    <li>
+                    <li onClick={() => setIsMenuOpen(false)}>
                         <a href="#works" className={`header_item-text ${activeTab === 'works' ? 'active' : ''}`}>Project</a>
                     </li>
-                    <li>
+                    <li onClick={() => setIsMenuOpen(false)}>
                         <a href="#contactUs" className={`header_item-text ${activeTab === 'contactUs' ? 'active' : ''}`}>Contact Me</a>
                     </li>
                 </ul>
@@ -97,8 +104,14 @@ function HeaderElement() {
                         className="btn btn-primary btn-resume"
                     >Resume ↓
                     </a>
-                    <button onClick={toggleTheme} className="btn btn-theme-toggle">
-                        ☯
+                    <button onClick={toggleTheme} className="btn-theme-toggle">
+                        <img
+                            src={isDark ? "/Images/Icons/dark.png" : "/Images/Icons/light.png"}
+                            alt="Toggle Theme" width={50} height={50}
+                        />
+                    </button>
+                    <button className="mobile-hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        {isMenuOpen ? "✕" : "☰"}
                     </button>
                 </div>
             </nav>
