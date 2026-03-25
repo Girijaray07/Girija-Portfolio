@@ -11,15 +11,15 @@
   z-index: 99999;
   will-change: transform;
   transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              border-color 0.3s ease,
-              background-color 0.3s ease;
+    height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
   mix-blend-mode: difference;
 }
 
 .circle-cursor.cursor-hover {
-  width: 50px !important;
-  height: 50px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-color: rgba(0, 255, 200, 0.8) !important;
   background-color: rgba(0, 255, 200, 0.08);
 }
@@ -37,7 +37,7 @@
   pointer-events: none;
   z-index: 99998;
   will-change: transform;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 0.3s ease, width 0.4s ease, height 0.4s ease;
 }
 
