@@ -1,0 +1,36 @@
+.console-typewriter {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  background: #111111;
+  color: #00ff41;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #2a2a2a;
+  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.35);
+}
+
+.console-prompt {
+  opacity: 0.5;
+  margin-right: 8px;
+  color: #00ff41;
+}
+
+.console-text {
+  color: #00ff41;
+}
+
+.console-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #00ff41;
+  animation: cursorBlink 0.7s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
