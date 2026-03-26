@@ -2,7 +2,8 @@ import React from 'react';
 import ShinyText from '../hooks/ShinyText';
 import BlurText from '../hooks/BlurText';
 import RotatingText from '../hooks/RotatingText';
-import profileImg from '../assets/profile.png';
+import ConsoleTypewriter from '../hooks/ConsoleTypewriter';
+import profileImg from '/Images/Profile/Girija.png';
 
 function HeroSection() {
   return (
@@ -10,11 +11,12 @@ function HeroSection() {
       <div className="hero-container">
         <div className="hero-text">
           <div className="hero-greeting">
-            <ShinyText
-              text="// Hello, World"
-              speed={3}
-              color="#6a6a8a"
-              shineColor="#00dce8"
+            <ConsoleTypewriter
+              words={['World', 'Coders', 'Folks', 'Developers', 'Friends']}
+              prefix="// Hello, "
+              speed={90}
+              deleteSpeed={70}
+              delayBetweenWords={1800}
             />
           </div>
 
@@ -76,16 +78,13 @@ function HeroSection() {
 
         <div className="hero-photo-wrapper">
           <div className="hero-photo-container">
-            <div className="hero-photo-glow" />
-            <div className="hero-photo-ring" />
-            <div className="hero-photo-ring-inner" />
             <img
               src={profileImg}
               alt="Girija Shankar Ray"
               className="hero-photo"
             />
-            <div className="hero-photo-dots" />
           </div>
+          <div className="hero-photo-line" />
         </div>
       </div>
     </section>
@@ -93,3 +92,4 @@ function HeroSection() {
 }
 
 export default HeroSection;
+

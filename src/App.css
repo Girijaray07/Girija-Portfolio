@@ -113,7 +113,7 @@
   flex: 1;
 }
 
-/* "// Hello, World" greeting */
+/* "// Hello, World" greeting — console typewriter */
 .hero-greeting {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -125,11 +125,9 @@
   animation: fadeSlideUp 0.6s ease 0.2s forwards;
 }
 
-/* Retro: override ShinyText's dark glow */
-.hero-greeting * {
-  -webkit-text-fill-color: var(--text-muted) !important;
-  background: none !important;
-  text-shadow: none !important;
+/* Let the ConsoleTypewriter handle its own colors */
+.hero-greeting .console-typewriter {
+  text-transform: none;
 }
 
 .name-start {
@@ -197,7 +195,7 @@
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.75;
-  max-width: 480px;
+  max-width: 70%;
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeSlideUp 0.6s ease 0.8s forwards;
@@ -235,6 +233,19 @@
   box-shadow: 4px 4px 0 var(--border);
 }
 
+.btn-primary:hover {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  box-shadow: 6px 6px 0 var(--border) !important;
+}
+
+.btn-primary:active {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 var(--border) !important;
+}
+
 .btn-primary {
   background: var(--border);
   color: var(--bg-primary);
@@ -260,69 +271,62 @@
 /* ===== HERO PHOTO ===== */
 .hero-photo-wrapper {
   position: relative;
+  margin-top: 20px;
   flex-shrink: 0;
   z-index: 2;
-  opacity: 0;
-  animation: fadeSlideUp 0.7s ease 0.4s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
 .hero-photo-container {
   position: relative;
   width: 300px;
-  height: 300px;
-}
-
-/* Retro offset frame - rotating spring border */
-.hero-photo-ring {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: -15px;
-  bottom: -15px;
-  border: 4px dashed var(--border);
-  border-radius: var(--radius-md);
-  z-index: 0;
-  transition: all 0.3s ease;
-  animation: photoRotate 15s linear infinite;
-  transform-origin: center center;
-}
-
-.hero-photo-ring-inner {
-  display: none;
-}
-
-.hero-photo-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-md);
-  background: var(--bg-secondary);
-  z-index: 0;
-  border: 2px solid var(--border);
+  height: 400px;
+  overflow: hidden;
 }
 
 .hero-photo {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-md);
   object-fit: cover;
-  object-position: top;
-  position: relative;
+  object-position: bottom center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 1;
-  border: 3px solid var(--border);
-  filter: grayscale(100%) contrast(150%);
+  border: none;
+  border-radius: 0;
+  background: none;
+  margin-bottom: -5px;
+  filter: grayscale(100%);
+  transform: translateY(105%);
+  animation: riseFromLine 1s cubic-bezier(0.33, 1, 0.68, 1) 0.8s forwards;
 }
 
-.hero-photo-dots {
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 90px;
-  height: 90px;
-  background-image: radial-gradient(var(--border) 2.5px, transparent 2.5px);
-  background-size: 12px 12px;
-  opacity: 0.8;
-  z-index: 0;
-  animation: photoRotate 40s linear infinite reverse;
+/* Minimal line — sits right below the container */
+.hero-photo-line {
+  width: 115%;
+  height: 2px;
+  margin-top: 0;
+  background: var(--text-primary);
+  flex-shrink: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: expandLine 0.5s ease 0.3s forwards;
+}
+
+@keyframes expandLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes riseFromLine {
+  to {
+    transform: translateY(0) scale(1.5);
+  }
 }
 
 /* ===== SCROLLING MARQUEE TICKER (between hero & about) ===== */
@@ -742,7 +746,7 @@
 
   .hero-photo-container {
     width: 220px;
-    height: 220px;
+    height: 260px;
   }
 
   .about-content {
@@ -790,7 +794,7 @@
 
   .hero-photo-container {
     width: 170px;
-    height: 170px;
+    height: 200px;
   }
 
   .btn {
