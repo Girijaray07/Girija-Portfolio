@@ -155,10 +155,6 @@
     }
 
     .header_items ul {
-        display: none;
-    }
-
-    .header_items ul.mobile-open {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -171,6 +167,19 @@
         gap: 24px;
         align-items: center;
         box-shadow: 0 8px 0 var(--border);
+
+        /* Circular reveal starting near the hamburger menu */
+        clip-path: circle(0px at calc(100% - 40px) -20px);
+        visibility: hidden;
+        pointer-events: none;
+        transition: clip-path 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .header_items ul.mobile-open {
+        clip-path: circle(150% at calc(100% - 40px) -20px);
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .mobile-hamburger {
