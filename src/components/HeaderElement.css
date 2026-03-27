@@ -23,6 +23,19 @@
     border-bottom: 2px solid var(--border);
 
     animation: fadein 0.55s ease forwards;
+    transition: all 0.3s ease;
+}
+
+/* 🔥 Glass effect */
+.header.scrolled {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .header.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .left-section {
@@ -35,7 +48,7 @@
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--text-primary);
-    margin: 0;
+    margin: -50px;
     opacity: 1;
     cursor: pointer;
     transition: 0.2s ease;
@@ -53,11 +66,11 @@
 
 .header_items {
     display: flex;
-    align-items: center;
     gap: 40px;
 }
 
 .header_items ul {
+    align-items: baseline;
     display: flex;
     gap: 32px;
     margin: 0;
@@ -91,7 +104,7 @@
     bottom: -4px;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 4px;
     background-color: var(--text-primary);
 }
 
@@ -149,7 +162,7 @@
     }
 }
 
-@media (max-width: 968px) {
+/* @media (max-width: 968px) {
     .header {
         padding: 0 24px;
     }
@@ -168,7 +181,6 @@
         align-items: center;
         box-shadow: 0 8px 0 var(--border);
 
-        /* Circular reveal starting near the hamburger menu */
         clip-path: circle(0px at calc(100% - 40px) -20px);
         visibility: hidden;
         pointer-events: none;
@@ -180,6 +192,34 @@
         clip-path: circle(150% at calc(100% - 40px) -20px);
         visibility: visible;
         pointer-events: auto;
+    }
+
+    .mobile-hamburger {
+        display: block;
+    }
+} */
+
+@media (max-width: 968px) {
+    .header_items ul {
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 70%;
+        height: calc(100vh - 80px);
+        background: var(--bg-primary);
+        border-left: 2px solid var(--border);
+        padding: 30px 20px;
+        gap: 24px;
+        align-items: flex-start;
+
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 1000;
+    }
+
+    .header_items ul.mobile-open {
+        transform: translateX(30%);
     }
 
     .mobile-hamburger {

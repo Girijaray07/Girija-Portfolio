@@ -3,10 +3,20 @@ import BlurText from "../hooks/BlurText";
 
 import './HeaderElement.css'
 
-function HeaderElement() {
+function HeaderElement({ loaded }) {
     const [activeTab, setActiveTab] = useState('home');
     const [isDark, setIsDark] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
@@ -68,7 +78,7 @@ function HeaderElement() {
         });
     };
     return (
-        <header className='header'>
+        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="left-section">
                 <BlurText
                     text="Girija Ray."
