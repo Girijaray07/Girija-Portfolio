@@ -77,6 +77,7 @@ function HeroSection() {
         </div>
 
         <div className="hero-photo-wrapper">
+          <div style={{ marginTop: '10px' }}></div>
           <div className="hero-photo-container">
             <img
               src={profileImg}
