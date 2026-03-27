@@ -10,6 +10,17 @@
   background: var(--bg-primary);
 }
 
+/* Stop all animations before loading */
+.portfolio:not(.app-loaded) * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Allow animations after loading */
+.portfolio.app-loaded * {
+  animation-play-state: running;
+}
+
 /* Kill the dark galaxy background */
 .bg-fixed {
   display: none;
@@ -233,6 +244,10 @@
   box-shadow: 4px 4px 0 var(--border);
 }
 
+.btn:hover {
+  transform: translateY(-1.5px) scale(1.01);
+}
+
 .btn-primary:hover {
   background-color: transparent !important;
   color: var(--text-primary) !important;
@@ -292,16 +307,20 @@
   height: 100%;
   object-fit: contain;
   object-position: bottom center;
+
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 1;
+
   border: none;
   border-radius: 0;
   background: none;
   margin-bottom: -5px;
+
   filter: grayscale(100%);
   transform: translateY(105%);
+
   animation: riseFromLine 1s cubic-bezier(0.33, 1, 0.68, 1) 0.8s forwards;
 }
 
