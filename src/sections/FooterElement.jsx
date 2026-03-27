@@ -1,14 +1,21 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 function FooterElement() {
   return (
-    <footer className="footer">
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <p className="footer-text">
-        Designed & Built by{' '}
+        Designed &amp; Built by{' '}
         <span className="footer-accent">Girija Shankar Ray</span>{' '}
         © 2026
       </p>
-    </footer>
+    </motion.footer>
   );
 }
 

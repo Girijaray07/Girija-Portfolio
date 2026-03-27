@@ -5,7 +5,7 @@ import RotatingText from '../hooks/RotatingText';
 import ConsoleTypewriter from '../hooks/ConsoleTypewriter';
 import profileImg from '/Images/Profile/Girija.png';
 
-function HeroSection() {
+function HeroSection({ loaded }) {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -34,6 +34,7 @@ function HeroSection() {
               delay={100}
               animateBy="letters"
               direction="bottom"
+              trigger={loaded}
             />
             <span className="hero-name-gradient">
               <BlurText
@@ -41,6 +42,7 @@ function HeroSection() {
                 delay={120}
                 animateBy="letters"
                 direction="bottom"
+                trigger={loaded}
               />
             </span>
           </h1>

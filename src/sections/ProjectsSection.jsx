@@ -1,5 +1,45 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import ShinyText from '../hooks/ShinyText';
+import useTilt from '../hooks/useTilt';
+
+function ProjectCard({ project, index }) {
+  const tilt = useTilt(9);
+
+  return (
+    <motion.div
+      key={project.title}
+      className="project-card cursor-target"
+      initial={{ opacity: 0, y: 36 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.45, delay: index * 0.12, ease: 'easeOut' }}
+      ref={tilt.ref}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      onMouseEnter={tilt.onMouseEnter}
+      style={{ willChange: 'transform' }}
+    >
+      <div className="project-card-header">
+        <div
+          className="project-card-gradient"
+          style={{ background: '#111' }}
+        >
+          <span>{project.emoji}</span>
+        </div>
+      </div>
+      <div className="project-card-body">
+        <h3 className="project-card-title">{project.title}</h3>
+        <p className="project-card-desc">{project.desc}</p>
+        <div className="project-tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="project-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function ProjectsSection() {
   const projects = [
@@ -29,38 +69,27 @@ function ProjectsSection() {
   return (
     <section id="works" className="section">
       <div className="section-inner">
-        <div className="section-label">Selected Work</div>
-        <h2 className="section-title">
-          <ShinyText
-            text="Featured Projects"
-            speed={4}
-            color="#c0c0d0"
-            shineColor="#00dce8"
-          />
-        </h2>
-        <div className="section-divider" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <div className="section-label">Selected Work</div>
+          <h2 className="section-title">
+            <ShinyText
+              text="Featured Projects"
+              speed={4}
+              color="#c0c0d0"
+              shineColor="#00dce8"
+            />
+          </h2>
+          <div className="section-divider" />
+        </motion.div>
 
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.title} className="project-card cursor-target">
-              <div className="project-card-header">
-                <div
-                  className="project-card-gradient"
-                  style={{ background: '#111' }}
-                >
-                  <span>{project.emoji}</span>
-                </div>
-              </div>
-              <div className="project-card-body">
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-card-desc">{project.desc}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </div>
