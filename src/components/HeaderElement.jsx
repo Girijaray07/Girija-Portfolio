@@ -86,6 +86,7 @@ function HeaderElement({ loaded }) {
                     animateBy="letters"
                     direction="bottom"
                     className="name-logo"
+                    trigger={loaded}
                 />
             </div>
             <nav className="header_items">

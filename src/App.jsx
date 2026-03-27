@@ -49,7 +49,7 @@ function App() {
         />
 
         <div className="portfolio-content">
-          <HeaderElement />
+          <HeaderElement loaded={loaded} />
           <HeroSection loaded={loaded} />
           <MarqueeTicker />
           <AboutSection scrollContainerRef={scrollContainerRef} />
