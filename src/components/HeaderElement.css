@@ -48,7 +48,7 @@
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--text-primary);
-    margin: -30px;
+    margin: -10px;
     opacity: 1;
     cursor: pointer;
     transition: 0.2s ease;
@@ -200,30 +200,41 @@
 } */
 
 @media (max-width: 968px) {
+    .header {
+        padding: 0 18px;
+    }
+
     .header_items ul {
         flex-direction: column;
         position: fixed;
         top: 80px;
         right: 0;
         width: 70%;
-        height: calc(100vh - 80px);
+        max-width: 100%;
+        height: calc(100dvh - 80px);
         background: var(--bg-primary);
         border-left: 2px solid var(--border);
         padding: 30px 20px;
         gap: 24px;
         align-items: flex-start;
+        box-sizing: border-box;
 
         transform: translateX(100%);
         transition: transform 0.4s ease;
         z-index: 1000;
+        overflow-y: auto;
     }
 
     .header_items ul.mobile-open {
-        transform: translateX(30%);
+        transform: translateX(0);
     }
 
     .mobile-hamburger {
         display: block;
+    }
+
+    .name-logo {
+        font-size: 1.4rem;
     }
 }
 

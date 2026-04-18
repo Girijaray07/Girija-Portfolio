@@ -4,6 +4,7 @@ import BlurText from '../hooks/BlurText';
 import RotatingText from '../hooks/RotatingText';
 import ConsoleTypewriter from '../hooks/ConsoleTypewriter';
 import profileImg from '/Images/Profile/Girija.png';
+import './HeroSection.css';
 
 function HeroSection({ loaded }) {
   return (
@@ -29,14 +30,17 @@ function HeroSection({ loaded }) {
           </div>
 
           <h1 className="hero-name">
-            <BlurText
-              text="Girija Shankar"
-              delay={100}
-              animateBy="letters"
-              direction="bottom"
-              trigger={loaded}
-            />
-            <span className="hero-name-gradient">
+            <span className="hero-name-line">
+              <BlurText
+                text="Girija Shankar"
+                delay={100}
+                animateBy="letters"
+                direction="bottom"
+                trigger={loaded}
+              />
+            </span>
+
+            <span className="hero-name-gradient hero-name-line">
               <BlurText
                 text="Ray"
                 delay={120}
