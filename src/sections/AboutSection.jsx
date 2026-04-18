@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import ScrollReveal from '../hooks/ScrollReveal';
+import './AboutSection.css';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },

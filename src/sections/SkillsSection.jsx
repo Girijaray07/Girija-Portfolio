@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import ShinyText from '../hooks/ShinyText';
+import './SkillsSection.css';
 
 function SkillsSection() {
   const skills = [

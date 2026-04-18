@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import ShinyText from '../hooks/ShinyText';
 import useTilt from '../hooks/useTilt';
+import './ProjectsSection.css';
 
 function ProjectCard({ project, index }) {
   const tilt = useTilt(9);
