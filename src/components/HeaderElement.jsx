@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import BlurText from "../hooks/BlurText";
+import { MdLightMode, MdOutlineLightMode } from "react-icons/md";
 
 import './HeaderElement.css'
 
@@ -118,10 +119,7 @@ function HeaderElement({ loaded }) {
 
                 <div className="header-buttons">
                     <button onClick={toggleTheme} className="btn-theme-toggle">
-                        <img
-                            src={isDark ? "/Images/Icons/dark.png" : "/Images/Icons/light.png"}
-                            alt="Toggle Theme" width={50} height={50}
-                        />
+                        {isDark ? <MdOutlineLightMode size={40} /> : <MdLightMode size={40} />}
                     </button>
                     <button className="mobile-hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? "✕" : "☰"}
