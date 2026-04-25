@@ -1,8 +1,10 @@
 import React from 'react';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import ShinyText from '../hooks/ShinyText';
 import BlurText from '../hooks/BlurText';
 import RotatingText from '../hooks/RotatingText';
 import ConsoleTypewriter from '../hooks/ConsoleTypewriter';
+import IconCTAButton from '../components/IconCTAButton';
 import profileImg from '/Images/Profile/Girija.png';
 import './HeroSection.css';
 
@@ -79,6 +81,29 @@ function HeroSection({ loaded }) {
             <a href="#contactUs" className="btn btn-outline">
               Get in Touch
             </a>
+          </div>
+
+          <div className="hero-cta-icons">
+            <IconCTAButton
+              icon={FiMail}
+              label="Email Me"
+              tooltip="girijaray64@gmail.com"
+              href="mailto:girijaray64@gmail.com"
+            />
+            <IconCTAButton
+              icon={FiGithub}
+              label="GitHub"
+              tooltip="github.com/Girijaray07"
+              href="https://github.com/Girijaray07"
+              external
+            />
+            <IconCTAButton
+              icon={FiLinkedin}
+              label="LinkedIn"
+              tooltip="linkedin.com/in/girija-shankar-ray"
+              href="https://www.linkedin.com/in/girija-shankar-ray/"
+              external
+            />
           </div>
         </div>
 

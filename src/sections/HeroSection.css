@@ -154,6 +154,16 @@
   animation: fadeSlideUp 0.6s ease 0.95s forwards;
 }
 
+/* CTA Icon Buttons */
+.hero-cta-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 1.05s forwards;
+}
+
 /* ===== HERO PHOTO ===== */
 .hero-photo-wrapper {
   position: relative;
@@ -313,5 +323,9 @@
   .hero-title-line {
     justify-content: left;
     flex-wrap: wrap;
+  }
+
+  .hero-cta-icons {
+    margin-top: 20px;
   }
 }

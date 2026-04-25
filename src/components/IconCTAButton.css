@@ -1,0 +1,143 @@
+/* Icon CTA Button - Minimal Premium Design */
+.icon-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  box-shadow: 4px 4px 0 var(--border);
+  transition: all 0.2s ease;
+}
+
+.icon-cta-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+.icon-cta-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--border);
+}
+
+/* Icon styling */
+.icon-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.icon-cta-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-primary);
+  fill: currentColor;
+}
+
+/* Label - expands on hover */
+.icon-cta-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    max-width 0.25s ease-out,
+    opacity 0.2s ease-out,
+    transform 0.25s ease-out,
+    margin-left 0.2s ease;
+}
+
+.icon-cta-label.visible {
+  max-width: 120px;
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 8px;
+}
+
+/* Tooltip - subtle premium */
+.icon-cta-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--border);
+  color: var(--bg-primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+  z-index: 10;
+}
+
+.icon-cta-tooltip.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip arrow */
+.icon-cta-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .icon-cta-btn {
+    padding: 10px;
+  }
+
+  .icon-cta-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .icon-cta-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+  .icon-cta-btn:focus .icon-cta-label,
+  .icon-cta-btn:focus .icon-cta-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .icon-cta-btn:focus .icon-cta-label {
+    max-width: 120px;
+    transform: translateX(0);
+    margin-left: 8px;
+  }
+
+  .icon-cta-btn:focus .icon-cta-tooltip {
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -54,7 +54,22 @@
 /* ===== RESPONSIVE — Mobile ===== */
 @media (max-width: 968px) {
   .contact-links {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+  }
+
+  .contact-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-link {
+    padding: 11px 20px;
+    font-size: 0.7rem;
+  }
+
+  .contact-desc {
+    font-size: 0.95rem;
   }
 }
