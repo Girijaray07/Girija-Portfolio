@@ -6,22 +6,8 @@
   justify-content: center;
   padding: 0 60px;
   position: relative;
-  background: var(--bg-primary);
   border-bottom: 2px solid var(--border);
   overflow: hidden;
-}
-
-/* Retro grid overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(17, 17, 16, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 16, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-container {

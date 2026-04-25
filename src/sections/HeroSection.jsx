@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { MdEmail } from "react-icons/md";
 import ShinyText from '../hooks/ShinyText';
 import BlurText from '../hooks/BlurText';
 import RotatingText from '../hooks/RotatingText';
@@ -85,7 +86,7 @@ function HeroSection({ loaded }) {
 
           <div className="hero-cta-icons">
             <IconCTAButton
-              icon={FiMail}
+              icon={MdEmail}
               label="Email Me"
               tooltip="girijaray64@gmail.com"
               href="mailto:girijaray64@gmail.com"
