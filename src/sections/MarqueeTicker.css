@@ -2,7 +2,7 @@
 .ticker-wrap {
   width: 100%;
   background: var(--accent);
-  color: #fff;
+  color: var(--bg-primary);
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -13,8 +13,7 @@
 
 .ticker-track {
   display: inline-flex;
-  animation: ticker 22s linear infinite;
-  gap: 0;
+  animation: ticker 20s linear infinite;
 }
 
 .ticker-item {
@@ -28,6 +27,10 @@
   gap: 20px;
 }
 
+.ticker-item::before {
+  content: '✦';
+  opacity: 0.5;
+}
 .ticker-item::after {
   content: '✦';
   opacity: 0.5;
