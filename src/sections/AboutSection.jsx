@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import ScrollReveal from '../hooks/ScrollReveal';
+import ShinyText from '../hooks/ShinyText';
 import './AboutSection.css';
 
 const cardVariants = {
@@ -14,7 +15,7 @@ const cardVariants = {
 
 function AboutSection({ scrollContainerRef }) {
   const stats = [
-    { number: '15+', label: 'Projects' },
+    { number: '9+', label: 'Projects' },
     { number: '3+', label: 'Years Coding' },
     { number: '7+', label: 'Technologies' },
     { number: '∞', label: 'Curiosity' },
@@ -29,7 +30,15 @@ function AboutSection({ scrollContainerRef }) {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          <div className="section-label">About Me</div>
+          <div className="section-label">Introducing Me</div>
+          <h2 className="section-title">
+            <ShinyText
+              text="About Me"
+              speed={3}
+              color="#c0c0d0"
+              shineColor="#00dce8"
+            />
+          </h2>
           <div className="section-divider" />
         </motion.div>
 
