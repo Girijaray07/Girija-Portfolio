@@ -28,8 +28,8 @@
 
 /* 🔥 Glass effect */
 .header.scrolled {
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     background-color: rgba(255, 255, 255, 0.5);
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
