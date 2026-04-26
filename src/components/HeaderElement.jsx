@@ -110,7 +110,7 @@ function HeaderElement({ loaded }) {
                     <li>
                         <a
                             href="/Girija_Ray_Resume.pdf"
-                            download="Girija_Shankar_Ray_Resume.pdf"
+                            download="Girija_Ray_Resume.pdf"
                             className="btn btn-primary btn-resume"
                         >Resume ↓
                         </a>
