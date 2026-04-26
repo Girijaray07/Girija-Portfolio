@@ -4,13 +4,14 @@
   position: relative;
   padding: 2px 14px 4px;
   border-radius: 8px;
-  background: rgba(0, 220, 232, 0.07);
+  background: rgba(0, 220, 232, 0.15);
   /* border: 1px solid rgba(0, 220, 232, 0.18); */
   color: var(--accent-cyan, #00dce8);
   font-weight: 700;
   letter-spacing: 0.5px;
   /* box-shadow: 0 0 18px rgba(0, 220, 232, 0.08), inset 0 0 10px rgba(0, 220, 232, 0.04); */
-  /* backdrop-filter: blur(6px); */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   /* smooth capsule resizing as text changes */
   transition: box-shadow 0.4s ease-in-out;
   overflow: hidden;

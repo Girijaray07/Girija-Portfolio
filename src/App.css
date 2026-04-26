@@ -10,6 +10,19 @@
   background: var(--bg-primary);
 }
 
+/* Retro grid overlay */
+.portfolio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--text-muted) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--text-muted) 10%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Stop all animations before loading */
 .portfolio:not(.app-loaded) * {
   animation: none !important;

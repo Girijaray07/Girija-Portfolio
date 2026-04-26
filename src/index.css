@@ -2,28 +2,28 @@
 
 :root {
   /* Retro light palette */
-  --bg-primary:    #f2f2f2;
-  --bg-secondary:  #e5e5e5;
-  --bg-card:       #ffffff;
+  --bg-primary: #f2f2f2;
+  --bg-secondary: #e5e5e5;
+  --bg-card: #ffffff;
   --bg-card-hover: #fcfcfc;
 
-  --text-primary:   #1a1a1a;
+  --text-primary: #1a1a1a;
   --text-secondary: #333333;
-  --text-muted:     #666666;
+  --text-muted: #666666;
 
   /* One bold accent — retro ink black */
-  --accent:          #1a1a1a;
-  --accent-warm:     #1a1a1a;
-  --accent-warn-lt:  #333333;
+  --accent: #1a1a1a;
+  --accent-warm: #1a1a1a;
+  --accent-warn-lt: #333333;
   --accent-gradient: linear-gradient(90deg, #1a1a1a 0%, #333333 100%);
 
-  --border:       #1a1a1a;
+  --border: #1a1a1a;
   --border-light: #1a1a1a;
 
   /* Typography */
-  --font-primary:  'Space Grotesk', system-ui, sans-serif;
-  --font-display:  'Syne', sans-serif;
-  --font-mono:     'Space Mono', monospace;
+  --font-primary: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
 
   /* Geometry */
   --radius-sm: 6px;
@@ -42,32 +42,35 @@
 }
 
 html.dark-theme {
-  --bg-primary:    #111111;
-  --bg-secondary:  #1a1a1a;
-  --bg-card:       #000000;
+  --bg-primary: #111111;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #000000;
   --bg-card-hover: #080808;
 
-  --text-primary:   #f2f2f2;
-  --text-secondary: #cccccc;
-  --text-muted:     #888888;
+  --text-primary: #e5e5e5;
+  --text-secondary: #c0c0c0;
+  --text-muted: #888888;
 
-  --accent:          #f2f2f2;
-  --accent-warm:     #f2f2f2;
-  --accent-warn-lt:  #cccccc;
-  --accent-gradient: linear-gradient(90deg, #f2f2f2 0%, #cccccc 100%);
+  --accent: #e5e5e5;
+  --accent-warm: #e5e5e5;
+  --accent-warn-lt: #c0c0c0;
+  --accent-gradient: linear-gradient(90deg, #e5e5e5 0%, #c0c0c0 100%);
 
-  --border:       #f2f2f2;
-  --border-light: #f2f2f2;
+  --border: #e5e5e5;
+  --border-light: #e5e5e5;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 /* Prevent horizontal overflow on all elements */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100vw;
 }
@@ -101,7 +104,12 @@ a:hover {
   color: var(--accent-warm);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.1;
@@ -112,7 +120,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-secondary); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-warm); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-warm);
+}
