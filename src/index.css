@@ -56,7 +56,7 @@ html.dark-theme {
   --accent-warn-lt: #c0c0c0;
   --accent-gradient: linear-gradient(90deg, #e5e5e5 0%, #c0c0c0 100%);
 
-  --border: #e5e5e5;
+  --border: #dadada;
   --border-light: #e5e5e5;
 }
 
