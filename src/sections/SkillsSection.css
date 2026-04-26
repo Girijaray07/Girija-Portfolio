@@ -11,30 +11,24 @@
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   text-align: center;
-  transition: all 0.1s ease;
   box-shadow: 4px 4px 0 var(--border);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: all 0.1s ease;
 }
 
 .skill-card::before {
   display: none;
 }
 
+.skill-card:hover {
+  box-shadow: 6px 6px 0 var(--border);
+}
+
 .skill-card:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 var(--border);
-}
-
-.skill-card:hover {
-  background: var(--border);
-  color: var(--bg-primary);
-}
-
-.skill-card:hover .skill-name,
-.skill-card:hover .skill-level {
-  color: var(--bg-primary);
 }
 
 .skill-icon {
@@ -51,17 +45,6 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 6px;
-  position: relative;
-  z-index: 1;
-  transition: color 0.2s;
-}
-
-.skill-level {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  letter-spacing: 2px;
-  text-transform: uppercase;
   position: relative;
   z-index: 1;
   transition: color 0.2s;

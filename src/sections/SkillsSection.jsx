@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FaReact, FaNodeJs, FaPython, FaJava, FaGit } from 'react-icons/fa';
-import { SiHtml5, SiThreedotjs, SiMysql, SiGnubash } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaJava, FaGithub } from 'react-icons/fa';
+import { SiThreedotjs, SiNpm, SiGit, SiMarkdown } from 'react-icons/si';
+import svgIcons from '../assets/icons/svgicons';
 
 import './SkillsSection.css';
 
@@ -9,12 +10,15 @@ function SkillsSection() {
   const skills = [
     { icon: <FaReact size={50} color='Cyan' />, name: 'ReactJs' },
     { icon: <FaNodeJs size={50} color='Green' />, name: 'NodeJs' },
-    { icon: <SiMysql size={50} color='Orange' />, name: 'MySQL' },
-    { icon: <SiGnubash size={50} color='Green' />, name: 'Bash' },
-    { icon: <FaPython size={50} color='Blue' />, name: 'Python' },
+    { icon: <img src={svgIcons.postgres} width={50} />, name: 'PostgreSQL' },
+    { icon: <SiNpm size={50} color='Red' />, name: 'NPM' },
+    { icon: <SiMarkdown size={50} color='var(--text-primary)' />, name: 'Markdown' },
+    { icon: <img src={svgIcons.bash} width={50} />, name: 'Bash' },
+    { icon: <img src={svgIcons.python} width={50} />, name: 'Python' },
     { icon: <FaJava size={50} color='Orange' />, name: 'Java' },
-    { icon: <FaGit size={50} color='Red' />, name: 'Git' },
-    { icon: <SiHtml5 size={50} color='Red' />, name: 'HTML / CSS' },
+    { icon: <SiGit size={50} color='Red' />, name: 'Git' },
+    { icon: <FaGithub size={50} color='var(--text-primary)' />, name: 'GitHub' },
+    { icon: <img src={svgIcons.vscode} width={50} />, name: 'VS Code' },
     { icon: <SiThreedotjs size={50} color='Orange' />, name: 'Three.js' },
   ];
 
@@ -28,9 +32,7 @@ function SkillsSection() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
           <div className="section-label">Tech Stack</div>
-          <h2 className="section-title">
-            Professional Skills
-          </h2>
+          <h2 className="section-title">Skills & Technologies</h2>
           <div className="section-divider" />
         </motion.div>
 
