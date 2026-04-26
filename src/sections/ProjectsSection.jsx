@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import ShinyText from '../hooks/ShinyText';
 import useTilt from '../hooks/useTilt';
+
+import portfolioImage from '../assets/projects/portfolio_image.png';
 import './ProjectsSection.css';
 
 function ProjectCard({ project, index }) {
@@ -49,21 +51,21 @@ function ProjectsSection() {
       desc: 'An immersive portfolio website with real-time 3D starfield, glassmorphic UI, and scroll-driven animations. Built with React, Three.js, and GSAP.',
       tags: ['React', 'Three.js', 'GSAP', 'WebGL'],
       gradient: 'linear-gradient(135deg, #0a0a2e, #1a1a4e, #0a2a3a)',
-      imagelink: '/Images/Assets/portfolio_image.png',
+      imagelink: portfolioImage,
     },
     {
       title: 'AI Code Assistant',
       desc: 'A machine learning powered coding assistant that provides intelligent code suggestions and automated debugging using natural language processing.',
       tags: ['Python', 'ML', 'NLP', 'FastAPI'],
       gradient: 'linear-gradient(135deg, #1a0a2e, #2a1a4e, #1a0a3a)',
-      imagelink: '/Images/Assets/portfolio_image.png',
+      imagelink: portfolioImage,
     },
     {
       title: 'Real-time Analytics Dashboard',
       desc: 'Full-stack dashboard with live data streaming, interactive charts, and role-based access control for enterprise-grade monitoring.',
       tags: ['React', 'Node.js', 'WebSocket', 'D3.js'],
       gradient: 'linear-gradient(135deg, #0a1a2e, #1a2a4e, #0a2a2a)',
-      imagelink: '/Images/Assets/portfolio_image.png',
+      imagelink: portfolioImage,
     },
   ];
 
@@ -77,13 +79,7 @@ function ProjectsSection() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
           <div className="section-label">Selected Work</div>
-          <h2 className="section-title">
-            <ShinyText
-              text="Featured Projects"
-              speed={4}
-              color="#c0c0d0"
-              shineColor="#00dce8"
-            />
+          <h2 className="section-title">Featured Projects
           </h2>
           <div className="section-divider" />
         </motion.div>

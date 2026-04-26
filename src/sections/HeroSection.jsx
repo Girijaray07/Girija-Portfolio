@@ -6,7 +6,7 @@ import BlurText from '../hooks/BlurText';
 import RotatingText from '../hooks/RotatingText';
 import ConsoleTypewriter from '../hooks/ConsoleTypewriter';
 import IconCTAButton from '../components/IconCTAButton';
-import profileImg from '/Images/Profile/Girija.png';
+import profileImg from '../assets/profile/girija.png';
 import './HeroSection.css';
 
 function HeroSection({ loaded }) {
@@ -25,11 +25,7 @@ function HeroSection({ loaded }) {
           </div>
 
           <div className="name-start">
-            <ShinyText
-              text="I'm"
-              speed={7}
-              color="#e5e5e5ff"
-            />
+            <span>I'm</span>
           </div>
 
           <h1 className="hero-name">
