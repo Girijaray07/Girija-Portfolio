@@ -1,18 +1,21 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import ShinyText from '../hooks/ShinyText';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaGit } from 'react-icons/fa';
+import { SiHtml5, SiThreedotjs, SiMysql, SiGnubash } from 'react-icons/si';
+
 import './SkillsSection.css';
 
 function SkillsSection() {
   const skills = [
-    { icon: '⚛️', name: 'React', level: 'Advanced' },
-    { icon: '🟨', name: 'JavaScript', level: 'Advanced' },
-    { icon: '🐍', name: 'Python', level: 'Advanced' },
-    { icon: '☕', name: 'Java', level: 'Intermediate' },
-    { icon: '⚡', name: 'C / C++', level: 'Intermediate' },
-    { icon: '🌐', name: 'HTML / CSS', level: 'Advanced' },
-    { icon: '🗄️', name: 'Node.js', level: 'Intermediate' },
-    { icon: '🎨', name: 'Three.js', level: 'Learning' },
+    { icon: <FaReact size={50} color='Cyan' />, name: 'ReactJs' },
+    { icon: <FaNodeJs size={50} color='Green' />, name: 'NodeJs' },
+    { icon: <SiMysql size={50} color='Orange' />, name: 'MySQL' },
+    { icon: <SiGnubash size={50} color='Green' />, name: 'Bash' },
+    { icon: <FaPython size={50} color='Blue' />, name: 'Python' },
+    { icon: <FaJava size={50} color='Orange' />, name: 'Java' },
+    { icon: <FaGit size={50} color='Red' />, name: 'Git' },
+    { icon: <SiHtml5 size={50} color='Red' />, name: 'HTML / CSS' },
+    { icon: <SiThreedotjs size={50} color='Orange' />, name: 'Three.js' },
   ];
 
   return (
@@ -26,12 +29,7 @@ function SkillsSection() {
         >
           <div className="section-label">Tech Stack</div>
           <h2 className="section-title">
-            <ShinyText
-              text="Skills & Technologies"
-              speed={4}
-              color="#c0c0d0"
-              shineColor="#00dce8"
-            />
+            Professional Skills
           </h2>
           <div className="section-divider" />
         </motion.div>
@@ -41,7 +39,7 @@ function SkillsSection() {
             <motion.div
               key={skill.name}
               className="skill-card cursor-target"
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{
@@ -52,7 +50,6 @@ function SkillsSection() {
             >
               <span className="skill-icon">{skill.icon}</span>
               <div className="skill-name">{skill.name}</div>
-              <div className="skill-level">{skill.level}</div>
             </motion.div>
           ))}
         </div>

@@ -4,18 +4,16 @@
   text-align: center;
   border-top: 2px solid var(--border);
   background: var(--accent);
-}
+  color: color-mix(in srgb, var(--bg-primary) 70%, transparent);}
 
 .footer-text {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .footer-accent {
-  color: #fff;
   font-weight: 700;
 }
 
