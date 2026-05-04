@@ -6,6 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import { BiLinkExternal } from "react-icons/bi";
 
 import portfolioImage from '../assets/projects/portfolio_image.png';
+import elevatedByDecimal from '../assets/projects/elevatedbydecimal.png'
 import './ProjectsSection.css';
 
 function ProjectCard({ project, index }) {
@@ -14,7 +15,7 @@ function ProjectCard({ project, index }) {
   return (
     <motion.div
       key={project.title}
-      className="project-card cursor-target"
+      className={`project-card cursor-target`}
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
@@ -38,7 +39,8 @@ function ProjectCard({ project, index }) {
             {project.github && (
               <a href={project.github}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
+                referrerPolicy="strict-origin-when-cross-origin"
                 className="project-icon-link"
                 aria-label="GitHub repository"
                 onClick={(e) => e.stopPropagation()}
@@ -59,9 +61,9 @@ function ProjectCard({ project, index }) {
             )}
           </div>
         </div>
-
-        <p className="project-card-desc">{project.desc}</p>
-
+        <div>
+          <p className="project-card-desc">{project.desc}</p>
+        </div>
         <div className="project-tags">
           {project.tags.map((tag) => (
             <span key={tag} className="project-tag">{tag}</span>
@@ -79,18 +81,18 @@ function ProjectsSection() {
       desc: 'An immersive portfolio website with real-time 3D starfield, glassmorphic UI, and scroll-driven animations. Built with React, Three.js, and GSAP.',
       tags: ['React', 'Three.js', 'GSAP', 'WebGL'],
       github: 'https://github.com/Girijaray07/Girija-Portfolio',
-      live: 'https://girijaportfolio.vercel.app/',
+      live: 'https://girijaray.dev/',
       gradient: 'linear-gradient(135deg, #0a0a2e, #1a1a4e, #0a2a3a)',
       imagelink: portfolioImage,
     },
     {
-      title: 'AI Code Assistant',
-      desc: 'A machine learning powered coding assistant that provides intelligent code suggestions and automated debugging using natural language processing.',
-      tags: ['Python', 'ML', 'NLP', 'FastAPI'],
-      github: 'https://github.com/Girijaray07/Linux-AI-Assistant',
-      live: '',
+      title: 'Elevated By Decimal',
+      desc: 'A business platform for scaling brands through marketing, Optimization service management, and real-time client interaction with dashboards and admin controls.',
+      tags: ['Dashboard', 'Client', 'Admin', 'Service', 'React'],
+      github: '',
+      live: 'https://elevatedbydecimal.girijaray.dev',
       gradient: 'linear-gradient(135deg, #1a0a2e, #2a1a4e, #1a0a3a)',
-      imagelink: portfolioImage,
+      imagelink: elevatedByDecimal,
     },
     {
       title: 'Real-time Analytics Dashboard',
@@ -120,7 +122,11 @@ function ProjectsSection() {
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard 
+              key={project.title}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
       </div>

@@ -9,7 +9,6 @@ const socialLinks = [
   { href: 'mailto:girijaray64@gmail.com', icon: <MdEmail />, label: 'Email' },
   { href: 'https://github.com/Girijaray07', icon: <FaGithub />, label: 'GitHub', external: true },
   { href: 'https://www.linkedin.com/in/girija-shankar-ray/', icon: <FaLinkedin />, label: 'LinkedIn', external: true },
-  { href: 'https://girijaportfolio.vercel.app/', icon: <BiLinkExternal />, label: 'Portfolio', external: true },
 ];
 
 const highlights = [
@@ -91,7 +90,7 @@ function ContactSection() {
                   href={link.href}
                   className="contact-social-btn cursor-target"
                   aria-label={link.label}
-                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
                   {...fadeUp(0.45 + i * 0.07)}
                 >
                   {link.icon}
