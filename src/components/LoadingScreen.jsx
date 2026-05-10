@@ -22,7 +22,7 @@ function LoadingScreen({ onComplete }) {
 
   // Animate progress 0 → 100 over ~6000ms
   useEffect(() => {
-    const DURATION = 6000;
+    const DURATION = 3000;
 
     const step = (timestamp) => {
       if (!startRef.current) startRef.current = timestamp;
@@ -57,9 +57,9 @@ function LoadingScreen({ onComplete }) {
     <div className={`loading-screen ${exiting ? 'loading-exit' : ''}`}>
       <div className="loading-inner">
         <div className="loading-logo">
-          <span className="loading-logo-bracket">[</span>
+          <span className="loading-logo-bracket">&#123;</span>
           <span className="loading-logo-text">GR</span>
-          <span className="loading-logo-bracket">]</span>
+          <span className="loading-logo-bracket">&#125;</span>
         </div>
 
         <div className="loading-message">
