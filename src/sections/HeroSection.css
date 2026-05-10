@@ -222,6 +222,7 @@
 @media (max-width: 968px) {
   .hero {
     padding: 100px 20px 60px;
+    margin-top: 30px;
     min-height: unset;
   }
 

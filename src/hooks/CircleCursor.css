@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* border-radius: 50%; */
+  border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
@@ -18,17 +18,17 @@
 }
 
 .circle-cursor.cursor-hover {
-  width: 20px !important;
-  height: 20px !important;
+  width: 5px !important;
+  height: 5px !important;
   border-radius: 50%;
   border-color: rgba(0, 255, 200, 0.8) !important;
   background-color: rgba(0, 255, 200, 0.08);
 }
 
-.circle-cursor.cursor-click {
+/* .circle-cursor.cursor-click {
   transform: scale(0.6) !important;
   border-color: rgba(0, 220, 255, 1) !important;
-}
+} */
 
 .circle-cursor-trail {
   position: fixed;
