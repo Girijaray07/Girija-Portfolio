@@ -7,6 +7,7 @@ import { BiLinkExternal } from "react-icons/bi";
 
 import portfolioImage from '../assets/projects/portfolio_image.png';
 import elevatedByDecimal from '../assets/projects/elevatedbydecimal.png'
+import mediassistImage from '../assets/projects/mediassistai.png'
 import './ProjectsSection.css';
 
 function ProjectCard({ project, index }) {
@@ -95,14 +96,23 @@ function ProjectsSection() {
       imagelink: elevatedByDecimal,
     },
     {
-      title: 'Real-time Analytics Dashboard',
-      desc: 'Full-stack dashboard with live data streaming, interactive charts, and role-based access control for enterprise-grade monitoring.',
-      tags: ['React', 'Node.js', 'WebSocket', 'D3.js'],
-      github: '',
-      live: '',
-      gradient: 'linear-gradient(135deg, #0a1a2e, #1a2a4e, #0a2a2a)',
-      imagelink: portfolioImage,
-    },
+    title: 'MediAssist AI Healthcare Assistant',
+    desc: 'An AI-powered healthcare assistant that provides intelligent symptom analysis, conversational medical guidance, and real-time healthcare support using advanced LLM pipelines and scalable cloud infrastructure.',
+    tags: [
+      'Python',
+      'FastAPI',
+      'ReactJS',
+      'Gemini AI',
+      'Docker',
+      'AWS EC2',
+      'PostgreSQL',
+      'Supabase',
+    ],
+    github: 'https://github.com/Girijaray07/mediassistai_backend',
+    live: 'https://mediassistai.girijaray.dev',
+    gradient: 'linear-gradient(135deg, #0a1a2e, #1a2a4e, #0a2a2a)',
+    imagelink: mediassistImage,
+  },
   ];
 
   return (
