@@ -79,8 +79,14 @@ function ProjectsSection() {
   const projects = [
     {
       title: 'Portfolio 3D Experience',
-      desc: 'An immersive portfolio website with real-time 3D starfield, glassmorphic UI, and scroll-driven animations. Built with React, Three.js, and GSAP.',
-      tags: ['React', 'Three.js', 'GSAP', 'WebGL'],
+      desc: 'A modern immersive developer portfolio featuring interactive 3D visuals, animated UI components, smooth transitions, and responsive performance-focused design built with modern frontend technologies.',
+      tags: [
+        'React',
+        'Three.js',
+        'GSAP',
+        'WebGL',
+        'Tailwind CSS',
+      ],
       github: 'https://github.com/Girijaray07/Girija-Portfolio',
       live: 'https://girijaray.dev/',
       gradient: 'linear-gradient(135deg, #0a0a2e, #1a1a4e, #0a2a3a)',
@@ -88,8 +94,14 @@ function ProjectsSection() {
     },
     {
       title: 'Elevated By Decimal',
-      desc: 'A business platform for scaling brands through marketing, Optimization service management, and real-time client interaction with dashboards and admin controls.',
-      tags: ['Dashboard', 'Client', 'Admin', 'Service', 'React'],
+      desc: 'A business growth and digital marketing platform featuring service management, client dashboards, admin controls, and scalable frontend architecture for modern brand operations.',
+      tags: [
+        'React',
+        'Dashboard',
+        'Admin Panel',
+        'Client Management',
+        'Business Platform',
+      ],
       github: '',
       live: 'https://elevatedbydecimal.girijaray.dev',
       gradient: 'linear-gradient(135deg, #1a0a2e, #2a1a4e, #1a0a3a)',
