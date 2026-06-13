@@ -1,0 +1,25 @@
+/* ===== FOOTER SECTION ===== */
+.footer {
+  padding: 15px 60px;
+  text-align: center;
+  border-top: 2px solid var(--border);
+  background: var(--accent);
+  color: color-mix(in srgb, var(--bg-primary) 70%, transparent);}
+
+.footer-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-accent {
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE — Mobile ===== */
+@media (max-width: 968px) {
+  .footer {
+    padding: 24px;
+  }
+}
