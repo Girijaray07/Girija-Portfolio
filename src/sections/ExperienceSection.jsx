@@ -1,48 +1,101 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import ShinyText from '../hooks/ShinyText';
+import './ExperienceSection.css';
+
+const experiences = [
+  {
+    role: 'Full Stack Developer',
+    company: 'Freelance / Personal Projects',
+    duration: 'Jan 2024 - Present',
+    description:
+      'Building production-grade web applications using React, Node.js, and cloud services. Delivered multiple client projects including business platforms, AI-powered assistants, and interactive portfolios with 3D visualizations.',
+    logo: 'F',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker'],
+  },
+  {
+    role: 'Open Source Contributor',
+    company: 'GitHub Community',
+    duration: 'Jun 2023 - Present',
+    description:
+      'Contributing to open-source projects focused on developer tooling and frontend frameworks. Building reusable component libraries, animation hooks, and creative coding experiments shared with the developer community.',
+    logo: 'G',
+    tags: ['Open Source', 'React', 'Three.js', 'GSAP'],
+  },
+  {
+    role: 'Computer Science Student',
+    company: 'University',
+    duration: '2022 - Present',
+    description:
+      'Pursuing a degree in Computer Science with focus on software engineering, data structures, algorithms, and full-stack web development. Continuously expanding knowledge through courses, certifications, and hands-on projects.',
+    logo: 'U',
+    tags: ['DSA', 'Java', 'Python', 'ML', 'Web Dev'],
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.45, delay: i * 0.12, ease: 'easeOut' },
+  }),
+};
 
 function ExperienceSection() {
-  const experiences = [
-    {
-      role: 'Lead Software Engineer at Google',
-      duration: 'Nov 2019 - Present',
-      description: 'As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.',
-      logo: 'G'
-    },
-    {
-      role: 'Software Engineer at YouTube',
-      duration: 'Jan 2017 - Oct 2019',
-      description: 'At YouTube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the social media giant dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.',
-      logo: 'Y'
-    }
-  ];
-
   return (
-    <section id="experience" className="section" style={{ background: '#111111', color: '#fff', borderTop: '2px solid #fff', borderBottom: '2px solid #fff' }}>
+    <section id="experience" className="section experience-section">
       <div className="section-inner">
-        <div className="section-label" style={{ color: '#aaa', borderColor: '#444' }}>My Experience</div>
-        <h2 className="section-title">
-          <ShinyText
-            text="Experience"
-            speed={4}
-            color="#fff"
-            shineColor="#aaa"
-          />
-        </h2>
-        <div className="section-divider" style={{ background: '#fff' }} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <div className="section-label">My Journey</div>
+          <h2 className="section-title">
+            <ShinyText
+              text="Experience"
+              speed={4}
+              color="#c0c0d0"
+              shineColor="#00dce8"
+            />
+          </h2>
+          <div className="section-divider" />
+        </motion.div>
 
-        <div className="experience-list" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="experience-card" style={{ padding: '30px', border: '2px solid #444', background: '#000', borderRadius: '6px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  <div style={{ width: '40px', height: '40px', background: '#fff', color: '#000', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', fontWeight: 'bold' }}>{exp.logo}</div>
-                  <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{exp.role}</h3>
+        <div className="experience-timeline">
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={i}
+              className="experience-card"
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={cardVariants}
+            >
+              <div className="experience-card-dot" />
+
+              <div className="experience-card-header">
+                <div className="experience-logo">{exp.logo}</div>
+                <div className="experience-meta">
+                  <h3 className="experience-role">{exp.role}</h3>
+                  <span className="experience-company">{exp.company}</span>
                 </div>
-                <div style={{ fontSize: '0.85rem', color: '#aaa', fontFamily: 'var(--font-mono)' }}>{exp.duration}</div>
+                <span className="experience-duration">{exp.duration}</span>
               </div>
-              <p style={{ fontSize: '0.9rem', color: '#ccc', lineHeight: '1.6' }}>{exp.description}</p>
-            </div>
+
+              <p className="experience-desc">{exp.description}</p>
+
+              <div className="experience-tags">
+                {exp.tags.map((tag) => (
+                  <span key={tag} className="experience-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

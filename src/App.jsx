@@ -1,28 +1,27 @@
-import { useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './router/AppRouter';
 
-import CircleCursor from './hooks/CircleCursor';
-import HeaderElement from './components/HeaderElement';
-import LoadingScreen from './components/LoadingScreen';
-
-import HeroSection from './sections/HeroSection';
-import MarqueeTicker from './sections/MarqueeTicker';
-import AboutSection from './sections/AboutSection';
-import SkillsSection from './sections/SkillsSection';
-import ExperienceSection from './sections/ExperienceSection';
-import ProjectsSection from './sections/ProjectsSection';
-import ContactSection from './sections/ContactSection';
-import FooterElement from './sections/FooterElement';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import './App.css';
 
+const LOADING_KEY = 'portfolio_loaded';
+
 function App() {
-  const scrollContainerRef = useRef(null);
-  const [loaded, setLoaded] = useState(false);
+  // Only show loading screen on first visit (not refresh)
+  const [loaded, setLoaded] = useState(() => {
+    return sessionStorage.getItem(LOADING_KEY) === 'true';
+  });
+
   const handleLoaded = () => {
-    setTimeout(() => setLoaded(true), 100);
+    setTimeout(() => {
+      setLoaded(true);
+      sessionStorage.setItem(LOADING_KEY, 'true');
+    }, 100);
   };
 
   return (
@@ -31,34 +30,17 @@ function App() {
 
       <div
         className={`portfolio ${loaded ? 'app-loaded' : ''}`}
-        ref={scrollContainerRef}
         style={{
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.5s ease 0.1s',
           pointerEvents: loaded ? 'auto' : 'none',
         }}
       >
-        <Analytics />
-        <SpeedInsights />
-        <CircleCursor
-          size={24}
-          borderWidth={5}
-          color="rgba(255, 0, 0, 0.8)"
-          trailColor="rgba(255, 0, 0, 0.2)"
-          delay={0.12}
-        />
-
-        <div className="portfolio-content">
-          <HeaderElement loaded={loaded} />
-          <HeroSection loaded={loaded} />
-          <MarqueeTicker />
-          <AboutSection scrollContainerRef={scrollContainerRef} />
-          <SkillsSection />
-          {/* <ExperienceSection /> */}
-          <ProjectsSection />
-          <ContactSection />
-          <FooterElement />
-        </div>
+        <BrowserRouter>
+          <Analytics />
+          <SpeedInsights />
+          <AppRouter />
+        </BrowserRouter>
       </div>
     </>
   );

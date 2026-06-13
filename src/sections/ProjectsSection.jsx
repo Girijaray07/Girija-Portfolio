@@ -108,7 +108,7 @@ function ProjectsSection() {
       imagelink: elevatedByDecimal,
     },
     {
-    title: 'MediAssist AI Healthcare Assistant',
+    title: 'MediAssist AI Assistant',
     desc: 'An AI-powered healthcare assistant that provides intelligent symptom analysis, conversational medical guidance, and real-time healthcare support using advanced LLM pipelines and scalable cloud infrastructure.',
     tags: [
       'Python',
