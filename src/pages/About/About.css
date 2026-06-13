@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════
+   ABOUT PAGE
+   ═══════════════════════════════════════════════════════════ */
+
+.about-page {
+    min-height: 100vh;
+    padding: 160px 60px 120px;
+}
+
+.about-page-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════ */
+
+.about-header {
+    margin-bottom: 100px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   ═══════════════════════════════════════════════════════════ */
+
+.about-description {
+    width: 100%;
+}
+
+/* each paragraph block */
+
+.about-scroll-section {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+/* wrapper */
+
+.about-scroll-reveal {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* paragraph */
+
+.about-scroll-reveal-text {
+    margin: 0;
+
+    font-size: clamp(2rem, 3vw, 3.4rem);
+
+    line-height: 1.8;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.96);
+
+    text-wrap: pretty;
+}
+
+/* word */
+
+.about-reveal-word {
+    display: inline-block;
+
+    opacity: 0.04;
+
+    filter: blur(12px);
+
+    transform: translate3d(0, 40px, 0);
+
+    will-change:
+        opacity,
+        filter,
+        transform;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STATS
+   ═══════════════════════════════════════════════════════════ */
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 100px;
+    gap: 18px;
+}
+
+.stat-card {
+    padding: 28px 20px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0 var(--border-light);
+    cursor: default;
+}
+
+.stat-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--border);
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 3px; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+
+    .about-page {
+        padding: 140px 40px 100px;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 968px) {
+
+    .about-page {
+        padding: 130px 24px 80px;
+    }
+
+    .about-header {
+        margin-bottom: 60px;
+    }
+
+    .about-scroll-section {
+        min-height: 75vh;
+    }
+
+    .about-scroll-reveal-text {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        line-height: 1.7;
+    }
+
+    .about-reveal-word {
+        transform: translate3d(0, 20px, 0);
+    }
+}
+
+@media (max-width: 640px) {
+
+    .about-page {
+        padding: 120px 18px 60px;
+    }
+
+    .about-scroll-section {
+        min-height: 68vh;
+    }
+
+    .about-scroll-reveal-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 22px 16px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
