@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://girijaray.dev/",
+      "service-desc": [
+        {
+          "href": "https://girijaray.dev/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://girijaray.dev/docs",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://girijaray.dev/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

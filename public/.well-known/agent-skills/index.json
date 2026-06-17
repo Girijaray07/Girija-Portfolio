@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "sitemap",
+      "type": "skill-md",
+      "description": "Exposes the XML sitemap for the portfolio site",
+      "url": "https://girijaray.dev/sitemap.xml",
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "api-catalog",
+      "type": "skill-md",
+      "description": "Machine-readable list of APIs on girijaray.dev",
+      "url": "https://girijaray.dev/.well-known/api-catalog",
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
