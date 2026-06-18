@@ -95,7 +95,7 @@ function HeaderElement({ loaded }) {
       <div className="right-section">
         <div className="header-links">
           <a
-            href="https://github.com/Girijaray07?ref=girijaray.dev"
+            href="https://github.com/Girijaray07/?utm_source=girijaray.dev&utm_medium=Portfolio&utm_campaign=showcase"
             target="_blank"
             rel="noopener"
             referrerPolicy="strict-origin-when-cross-origin"
@@ -104,7 +104,7 @@ function HeaderElement({ loaded }) {
             <RiGithubFill />
           </a>
           <a
-            href="https://discord.gg/JtbQfghp?ref=girijaray.dev"
+            href="https://discord.gg/JtbQfghp/?utm_source=girijaray.dev&utm_medium=Portfolio&utm_campaign=showcase"
             target="_blank"
             rel="noopener"
             referrerPolicy="strict-origin-when-cross-origin"
@@ -113,7 +113,7 @@ function HeaderElement({ loaded }) {
             <RiDiscordFill />
           </a>
           <a
-            href="https://www.linkedin.com/in/girija-shankar-ray/?ref=girijaray.dev"
+            href="https://www.linkedin.com/in/girija-shankar-ray//?utm_source=girijaray.dev&utm_medium=Portfolio&utm_campaign=showcase"
             target="_blank"
             rel="noopener"
             referrerPolicy="strict-origin-when-cross-origin"
