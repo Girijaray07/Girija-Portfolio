@@ -13,7 +13,6 @@ const Now = lazy(() => import('../pages/Now/Now'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 /**
- * Central route configuration.
  * All routes are nested under MainLayout for persistent header/footer.
  * Child paths are relative (no leading /).
  */
