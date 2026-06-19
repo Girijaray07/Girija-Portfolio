@@ -53,15 +53,11 @@
     margin: 0;
 
     font-size: clamp(2rem, 3vw, 3.4rem);
-
     line-height: 1.8;
-
     font-weight: 500;
-
     letter-spacing: -0.02em;
-
-    color: rgba(255, 255, 255, 0.96);
-
+    color: var(--text-primary);
+    
     text-wrap: pretty;
 }
 

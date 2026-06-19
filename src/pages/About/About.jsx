@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
    ═══════════════════════════════════════════════════════════ */
 
 const stats = [
-  { number: '9+', label: 'Projects' },
+  { number: '6+', label: 'Projects' },
   { number: '3+', label: 'Years Coding' },
   { number: '7+', label: 'Technologies' },
   { number: '∞', label: 'Curiosity' },
