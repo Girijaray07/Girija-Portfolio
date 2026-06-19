@@ -8,7 +8,7 @@ import './Now.css';
 
 /* ── Data ── */
 const STATUS = { label: 'Available for work', color: '#22c55e' };
-const LAST_UPDATED = 'May 2026';
+const LAST_UPDATED = 'June 2026';
 
 const currentFocus = [
   {
@@ -89,18 +89,16 @@ const exploringChips = [
 
 const terminalLines = [
   '$ whoami',
-  'girija — full-stack developer',
+  'Girija Shankar Ray — Full-Stack Developer and AI Engineer',
   '',
   '$ cat current_stack.txt',
-  'React · Node.js · PostgreSQL · Python · Docker',
+  'React · Node.js · PostgreSQL · Python · Docker · AWS',
   '',
   '$ git log --oneline -3',
   'a1b2c3d  feat: add /now page to portfolio',
   'd4e5f6g  refactor: multi-page React Router',
-  'h7i8j9k  style: premium 3D visual system',
+  'h7i8j9k  style: MediAssist AI Backend Workflow',
   '',
-  '$ echo $GOAL_2026',
-  'Ship a SaaS product & master system design',
 ];
 
 /* ── GitHub Contribution Graph (mock) ── */
@@ -128,12 +126,12 @@ function GitHubGraph() {
         <FiGithub />
         <span>GitHub Contributions</span>
         <a
-          href="https://github.com/Girijaray07"
+          href="https://github.com/Girijaray07/?utm_source=girijaray.dev&utm_medium=Portfolio&utm_campaign=showcase"
           target="_blank"
           rel="noopener"
           className="now-github-link"
         >
-          View Profile <FiExternalLink size={12} />
+          <b>View Profile <FiExternalLink size={12} /></b>
         </a>
       </div>
       <div className="now-github-grid">
@@ -215,7 +213,7 @@ function Now() {
 
   return (
     <PageTransition>
-      <section className="now-page section">
+      <section id="now-page" className="now-page">
         <div className="section-inner now-inner">
 
           {/* ── Header ── */}

@@ -1,12 +1,23 @@
-/* ===== /NOW PAGE ===== */
+/* ===== NOW PAGE ===== */
+
 .now-page {
-  padding-top: 160px;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .now-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
   gap: 60px;
+}
+
+.now-header {
+  padding-top: 160px;
+  margin-bottom: 20px;
 }
 
 /* ── Header ── */
@@ -592,50 +603,58 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 968px) {
-  .now-page {
+@media (max-width: 1024px) {
+  .now-inner {
+    padding: 0 40px;
+  }
+  .now-header {
     padding-top: 140px;
   }
+}
 
+@media (max-width: 968px) {
+  .now-inner {
+    padding: 0 24px;
+  }
+  .now-header {
+    padding-top: 130px;
+  }
   .now-focus-grid {
     grid-template-columns: 1fr;
   }
-
   .now-two-col {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .now-reading-grid {
     grid-template-columns: 1fr;
   }
-
   .now-header-row {
     flex-direction: column;
   }
-
   .now-meta {
     align-items: flex-start;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .now-inner {
+    padding: 0 18px;
     gap: 44px;
   }
-
+  .now-header {
+    padding-top: 120px;
+  }
   .now-focus-card,
   .now-building-card,
   .now-reading-card {
     box-shadow: 3px 3px 0 var(--border);
   }
-
   .now-terminal-body {
     font-size: 0.7rem;
     padding: 14px 16px;
     min-height: 160px;
   }
-
   .now-github-cell {
     width: 10px;
     height: 10px;
