@@ -10,7 +10,7 @@ import RotatingText from '../../hooks/RotatingText';
 import ConsoleTypewriter from '../../hooks/ConsoleTypewriter';
 import IconCTAButton from '../../components/IconCTAButton';
 import PageTransition from '../../components/PageTransition/PageTransition';
-import MarqueeTicker from '../../sections/MarqueeTicker';
+import MarqueeTicker from '../../components/MarqueeTicker/MarqueeTicker';
 import profileImg from '../../assets/profile/girija.png';
 
 import './Home.css';
