@@ -21,21 +21,21 @@ const previewCards = [
     title: 'Who I Am',
     desc: 'Full-stack developer crafting immersive digital experiences at the intersection of creativity and technology.',
     to: '/about',
-    icon: '⚡',
+    // icon: '⚡',
   },
   {
     label: 'Projects',
     title: 'Selected Work',
     desc: 'From 3D portfolios to AI assistants — explore my featured builds and live deployments.',
     to: '/projects',
-    icon: '🚀',
+    // icon: '🚀',
   },
   {
     label: 'Now',
     title: "What I'm Doing",
     desc: "Current focus, learning goals, and what I'm building right now — updated regularly.",
     to: '/now',
-    icon: '🔮',
+    // icon: '🔮',
   },
 ];
 
