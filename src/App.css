@@ -48,6 +48,18 @@
   z-index: 1;
 }
 
+/* ===== MAIN LAYOUT ===== */
+.main-layout {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout > main {
+  flex: 1;
+}
+
 /* ===== SECTION LAYOUT ===== */
 .section {
   position: relative;
@@ -158,6 +170,138 @@
 
 .btn-outline:active {
   color: var(--text-primary);
+}
+
+/* ===== PREMIUM 3D UTILITY CLASSES ===== */
+
+/* Glass Card — frosted glass morphism effect */
+.glass-card {
+  background: color-mix(in srgb, var(--bg-card) 85%, transparent);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1.5px solid color-mix(in srgb, var(--border) 40%, transparent);
+}
+
+/* Floating Panel — elevated floating appearance */
+.floating-panel {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow:
+    6px 6px 0 var(--border),
+    0 20px 40px -10px color-mix(in srgb, var(--accent) 8%, transparent);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.floating-panel:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    8px 8px 0 var(--border),
+    0 28px 50px -10px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* Glow Effect — subtle ambient glow */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--accent-gradient);
+  opacity: 0;
+  z-index: -1;
+  filter: blur(16px);
+  transition: opacity 0.4s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.12;
+}
+
+/* Perspective Container — 3D perspective wrapper */
+.perspective-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* 3D Button — depth and press effect */
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow:
+    4px 4px 0 var(--border),
+    0 8px 16px -4px color-mix(in srgb, var(--accent) 10%, transparent);
+  transition: all 0.15s ease;
+  transform: translateZ(0);
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px) translateZ(4px);
+  box-shadow:
+    6px 6px 0 var(--border),
+    0 12px 24px -4px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.btn-3d:active {
+  transform: translateY(1px) translateZ(0);
+  box-shadow:
+    2px 2px 0 var(--border),
+    0 4px 8px -2px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--bg-primary),
+    var(--bg-secondary),
+    color-mix(in srgb, var(--accent) 5%, var(--bg-primary)),
+    var(--bg-primary)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Depth Card — card with layered depth shadow */
+.depth-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow:
+    4px 4px 0 var(--border),
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.03);
+}
+
+.depth-card:hover {
+  transform: translateY(-4px) rotateX(1deg);
+  box-shadow:
+    6px 6px 0 var(--border),
+    0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 20px 30px -5px rgba(0, 0, 0, 0.05);
 }
 
 /* ===== ANIMATIONS ===== */

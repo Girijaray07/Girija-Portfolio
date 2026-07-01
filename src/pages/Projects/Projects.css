@@ -1,0 +1,236 @@
+/* ===== PROJECTS PAGE ===== */
+
+.projects-page {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.projects-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.projects-header {
+    padding-top: 160px;
+    margin-bottom: 60px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.project-card {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    transition: all 0.15s ease;
+    box-shadow: 6px 6px 0 var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.project-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--border);
+}
+
+.project-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 var(--border);
+}
+
+.project-card-header {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    border-bottom: 2px solid var(--border);
+}
+
+.project-card-gradient {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    filter: grayscale(20%) contrast(1.1);
+}
+
+.project-card-gradient::after {
+    display: none;
+}
+
+.project-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 100%; */
+    padding: 20px 22px 22px;
+}
+
+/* title + icon links on the same row */
+.project-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.project-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+    flex: 1;
+    min-width: 0;
+    /* prevent overflow in flex */
+}
+
+.project-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto
+}
+
+.project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Icon link buttons beside the title */
+.project-title-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.project-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+    box-shadow: 2px 2px 0 var(--border);
+}
+
+.project-icon-link:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--border);
+    color: var(--text-primary);
+}
+
+.project-icon-link:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--border);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .projects-inner {
+        padding: 0 40px;
+    }
+
+    .projects-header {
+        padding-top: 140px;
+    }
+}
+
+@media (max-width: 968px) {
+    .projects-inner {
+        padding: 0 24px;
+    }
+
+    .projects-header {
+        padding-top: 130px;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-card-body {
+        padding: 18px;
+    }
+
+    .project-card-title {
+        font-size: 1rem;
+    }
+
+    .project-card-desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-inner {
+        padding: 0 18px;
+    }
+
+    .projects-header {
+        padding-top: 120px;
+        margin-bottom: 30px;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .project-card-header {
+        height: 150px;
+    }
+
+    .project-card-gradient {
+        font-size: 2.5rem;
+    }
+
+    .project-card-body {
+        padding: 16px;
+    }
+
+    .project-tag {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+    }
+}
