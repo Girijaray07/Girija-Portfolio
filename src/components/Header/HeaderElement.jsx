@@ -8,7 +8,7 @@ import { RiGithubFill, RiLinkedinFill, RiDiscordFill } from 'react-icons/ri';
 import './HeaderElement.css';
 
 const navItems = [
-  { to: '/about', label: 'About' },
+  { to: '/about', label: 'About Me' },
   { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/now', label: 'Now' },
